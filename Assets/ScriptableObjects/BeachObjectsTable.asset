@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e1435516622c474da30480d805468af, type: 3}
+  m_Name: BeachObjectsTable
+  m_EditorClassIdentifier: 
+  _clickArea: 2
+  _objectsList:
+  - Object: {fileID: 6572280103841642536, guid: 9a221ddeaa0a66f409f19201af47d81a, type: 3}
+    Quantity: 1
+  - Object: {fileID: 3248551978582194266, guid: 02aa254da0ce92347b4a9943be89dd34, type: 3}
+    Quantity: 3
+  - Object: {fileID: 3292707425424659825, guid: c3cb216c7c187c44b95fe7258455243d, type: 3}
+    Quantity: 3

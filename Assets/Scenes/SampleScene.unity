@@ -469,6 +469,8 @@ GameObject:
   - component: {fileID: 766231935}
   - component: {fileID: 766231937}
   - component: {fileID: 766231936}
+  - component: {fileID: 766231938}
+  - component: {fileID: 766231939}
   m_Layer: 5
   m_Name: SeaClickArea
   m_TagString: Untagged
@@ -534,6 +536,32 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 766231934}
   m_CullTransparentMesh: 1
+--- !u!114 &766231938
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 766231934}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d064b5ad29a9b8498f69b563a6bbd50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _clickArea: 1
+--- !u!114 &766231939
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 766231934}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 242061c7ddbaf5545a614172d5cfb988, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _objectsToAppearTable: {fileID: 11400000, guid: 3c2fea6549046fc488c671eeb1c1554f, type: 2}
 --- !u!1 &864575712
 GameObject:
   m_ObjectHideFlags: 0
@@ -877,6 +905,8 @@ GameObject:
   - component: {fileID: 2017356601}
   - component: {fileID: 2017356603}
   - component: {fileID: 2017356602}
+  - component: {fileID: 2017356604}
+  - component: {fileID: 2017356605}
   m_Layer: 5
   m_Name: BeachClickArea
   m_TagString: Untagged
@@ -942,3 +972,29 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2017356600}
   m_CullTransparentMesh: 1
+--- !u!114 &2017356604
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2017356600}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d064b5ad29a9b8498f69b563a6bbd50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _clickArea: 2
+--- !u!114 &2017356605
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2017356600}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 242061c7ddbaf5545a614172d5cfb988, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _objectsToAppearTable: {fileID: 11400000, guid: dc82b6955bf0abb4c8791c0577180190, type: 2}
