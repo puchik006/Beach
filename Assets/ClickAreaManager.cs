@@ -1,5 +1,6 @@
+using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
+using Random = UnityEngine.Random;
 
 [RequireComponent(typeof(Transform))]
 public class ClickAreaManager : MonoBehaviour
@@ -7,32 +8,47 @@ public class ClickAreaManager : MonoBehaviour
     [SerializeField] private ObjectsToAppearTable _objectsToAppearTable;
     private RectTransform _place;
 
+    private List<int> _ojectsQty = new();
+
     private void Awake()
     {
         _place = GetComponent<RectTransform>();
         ClickAreaHandler.ClickAreaClicked += OnClickAreaClicked;
     }
 
-    private void OnClickAreaClicked(ClickArea clickArea)
+    private void OnEnable()
     {
-        Instantiate(_objectsToAppearTable.ObjectsList[0].Object,GetRandomPositionInsideBounds(),Quaternion.identity,_place);
+        _ojectsQty.Clear();
+        _objectsToAppearTable.ObjectsList.ForEach(e => _ojectsQty.Add(e.Quantity));
+        Debug.Log(_ojectsQty.Count);
     }
 
-    private Vector3 GetRandomPositionInsideBounds()
+    private void OnClickAreaClicked(ClickArea clickArea)
     {
-        Vector2 boundsMin = _place.rect.min;
-        Vector2 boundsMax = _place.rect.max;
+        GameObject randomObject = GetRandomObjectFromList();
 
-        // Get the position in local space
-        Vector3 localPosition = new Vector3(
-            Random.Range(boundsMin.x, boundsMax.x),
-            Random.Range(boundsMin.y, boundsMax.y),
-            0f
-        );
+        if (randomObject != null)
+        {
+            Instantiate(randomObject, Input.mousePosition, Quaternion.identity, _place);
+        }
+    }
 
-        // Convert local position to global position
-        Vector3 globalPosition = _place.TransformPoint(localPosition);
+    private GameObject GetRandomObjectFromList()
+    {
+        int randomIndex;
+        do
+        {
+            randomIndex = Random.Range(0, _objectsToAppearTable.ObjectsList.Count());
+        } while (randomIndex < _ojectsQty.Count && _ojectsQty[randomIndex] <= 0);
 
-        return globalPosition;
+        if (randomIndex < _ojectsQty.Count && _ojectsQty[randomIndex] > 0)
+        {
+            _ojectsQty[randomIndex]--;
+            return _objectsToAppearTable.ObjectsList[randomIndex].Object;
+        }
+        else
+        {
+            return null;
+        }
     }
 }

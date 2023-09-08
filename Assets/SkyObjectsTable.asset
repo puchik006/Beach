@@ -12,8 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e1435516622c474da30480d805468af, type: 3}
   m_Name: SkyObjectsTable
   m_EditorClassIdentifier: 
-  ClickArea: 0
-  ObjectsList:
+  _clickArea: 0
+  _objectsList:
+  - Object: {fileID: 5128748761241339849, guid: 03f2f9da996a65247aa6d6b3a957005a, type: 3}
+    Quantity: 1
   - Object: {fileID: 3344610655622146406, guid: 2c4c9e7e76d26e54a9c6d67b560b07d6, type: 3}
     Quantity: 2
   - Object: {fileID: 6022465403649663519, guid: f172a3c501abc40498dd40f64e52a06c, type: 3}
@@ -22,5 +24,3 @@ MonoBehaviour:
     Quantity: 2
   - Object: {fileID: 8281669311902050695, guid: ba5ae9a376b5deb48a68f369d7d2da78, type: 3}
     Quantity: 2
-  - Object: {fileID: 5128748761241339849, guid: 03f2f9da996a65247aa6d6b3a957005a, type: 3}
-    Quantity: 1
